@@ -5,9 +5,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 SECRET_KEY = 'django-insecure-+ma#2(&uu8da0h21ha5tu(_tyxi0532mon#2a)*qxtp0#g_063'
 
-DEBUG = False   # لازم False في السيرفر
+DEBUG = True  # لازم False في السيرفر
 
-ALLOWED_HOSTS = ['yourusername.pythonanywhere.com']  # غيّر yourusername لليوزر بتاعك
+ALLOWED_HOSTS = ['*']  # غيّر yourusername لليوزر بتاعك
 
 
 # Application definition
@@ -23,6 +23,8 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'drf_yasg',
 ]
+
+
 
 REST_FRAMEWORK = {
     "DEFAULT_AUTHENTICATION_CLASSES": [
@@ -95,10 +97,10 @@ USE_TZ = True
 
 # Static files (CSS, JavaScript, Images)
 STATIC_URL = '/static/'
-STATIC_ROOT = BASE_DIR / 'staticfiles'   # مهم عشان PythonAnywhere
+STATICFILES_DIRS = []  # سيبها فاضية دلوقتي
+STATIC_ROOT = BASE_DIR / "staticfiles"
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = BASE_DIR / 'media'
+
 
 
 # Default primary key field type
